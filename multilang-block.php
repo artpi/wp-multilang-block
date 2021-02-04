@@ -4,6 +4,7 @@
  * Description:     Create hidden content visible only for speakers of other languages
  * Version:         0.1.0
  * Author:          Artur Piszek (artpi)
+ * Author URI:      https://piszek.com
  * License:         GPL-2.0-or-later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     multilang-block
