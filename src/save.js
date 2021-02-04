@@ -16,9 +16,9 @@ import { InnerBlocks } from '@wordpress/editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
 	return (
-		<div>
+		<div className="multilang-block" lang={ attributes.lang }>
    			<InnerBlocks.Content />
 		</div>
 	);

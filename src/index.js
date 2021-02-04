@@ -40,6 +40,9 @@ registerBlockType( 'artpi/multilang-block', {
 	attributes: {
 		lang: {
 			type: 'string',
+			source: 'attribute',
+			selector: 'div.multilang-block',
+			attribute: 'lang',
 		},
 	},
 	/**
