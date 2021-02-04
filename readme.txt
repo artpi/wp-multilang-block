@@ -44,9 +44,7 @@ In JavaScript. Post Content has the full content of the post, so it will probabl
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /.wordpress-org directory
-2. This is the second screen shot
+1. An example of the Multilang block wrapping an introduction for Polish visitors.
 
 == Changelog ==
 
