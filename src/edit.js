@@ -5,6 +5,9 @@
  */
 import { __ } from '@wordpress/i18n';
 import { InnerBlocks } from '@wordpress/editor';
+import { BlockControls } from '@wordpress/block-editor';
+import { SelectControl, Toolbar } from '@wordpress/components';
+import ISO6391 from 'iso-639-1';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -30,9 +33,29 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+const userLangs = ( navigator.languages || [] ) // We want the current user langs up top, so that they are easier to pick.
+	.map( lang => lang.split('-')[0] ) // Way of extracting ISO6391
+	.filter( (value, index, self) => self.indexOf(value) === index ); // We want unique ones.
+
+const languageCodes = userLangs.concat( ISO6391.getAllCodes() ).map( code => ( {
+	value: code,
+	label: ISO6391.getNativeName( code )
+} ) );
+
+export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<div { ...useBlockProps() }>
+			<BlockControls>
+				<Toolbar label={ __( 'Select a language to show this block to' ) }>
+				<SelectControl
+					value={ attributes.lang }
+					onChange={ ( lang ) => setAttributes( { lang } ) }
+					options={ [
+						{ value: '', label: __( 'This block will only be visible for people speaking:' ), disabled: true },
+					].concat( languageCodes ) }
+				/>
+				</Toolbar>
+			</BlockControls>
 			<InnerBlocks />
 		</div>
 	);

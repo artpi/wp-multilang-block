@@ -37,7 +37,11 @@ registerBlockType( 'artpi/multilang-block', {
 	 * @see https://make.wordpress.org/core/2020/11/18/block-api-version-2/
 	 */
 	apiVersion: 2,
-
+	attributes: {
+		lang: {
+			type: 'string',
+		},
+	},
 	/**
 	 * This is the display title for your block, which can be translated with `i18n` functions.
 	 * The block inserter will show this name.
