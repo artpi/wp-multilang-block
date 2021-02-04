@@ -27,6 +27,11 @@ Multilang block was created with this idea. Of course, nothing prevents you from
 
 == Frequently Asked Questions ==
 
+= What can I put inside the Multilang block? =
+
+Everything. Except donuts, they get squished and the filling will be all over the place.
+The block is functionally identical to the group block.
+
 = How does multilang block know what languages users speak? =
 
 Users can set up languages in the browser settings. They are passed to `navigator.languages` property.
