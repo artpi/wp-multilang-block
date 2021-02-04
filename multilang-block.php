@@ -62,3 +62,15 @@ function artpi_multilang_block_block_init() {
 	);
 }
 add_action( 'init', 'artpi_multilang_block_block_init' );
+
+function artpi_multilang_block_block_frontend_assets() {
+	if ( ! is_admin() && ! wp_script_is( 'multilang-block-frontend-js', 'enqueued' ) ) {
+		wp_enqueue_script(
+			'multilang-block-frontend-js',
+			plugins_url( '/multilang-block.js', __FILE__ ),
+			[],
+			filemtime( plugin_dir_path( __FILE__ ) . '/multilang-block.js' )
+		  );
+	}
+}
+add_action( 'enqueue_block_assets', 'artpi_multilang_block_block_frontend_assets' );

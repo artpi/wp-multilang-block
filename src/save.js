@@ -18,7 +18,7 @@ import { InnerBlocks } from '@wordpress/editor';
  */
 export default function save( { attributes } ) {
 	return (
-		<div className="multilang-block" lang={ attributes.lang }>
+		<div className="multilang-block-container" lang={ attributes.lang }>
    			<InnerBlocks.Content />
 		</div>
 	);

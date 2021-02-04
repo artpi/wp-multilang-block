@@ -41,7 +41,7 @@ registerBlockType( 'artpi/multilang-block', {
 		lang: {
 			type: 'string',
 			source: 'attribute',
-			selector: 'div.multilang-block',
+			selector: 'div.multilang-block-container',
 			attribute: 'lang',
 		},
 	},
